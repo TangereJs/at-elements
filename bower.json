@@ -1,0 +1,27 @@
+{
+  "name": "at-elements",
+  "private": true,
+  "dependencies": {
+    "polymer": "Polymer/polymer#master",
+    "core-ajax": "Polymer/core-ajax#master",    
+    "at-app-scaffold": "TangereJs/at-app-scaffold#master",
+    "at-core-theme": "TangereJs/at-core-theme#master",
+    "at-core-router": "TangereJs/at-core-router#master",
+    "at-core-list": "TangereJs/at-core-list#master",
+    "at-core-form": "TangereJs/at-core-form#master",
+    "at-core-spinner": "TangereJs/at-core-spinner#master",
+    "at-core-activity": "TangereJs/at-core-activity#master",
+    "at-carbon-clamp": "TangereJs/at-carbon-clamp#master",
+    "at-carbon-message": "TangereJs/at-carbon-message#master"
+  }
+}
+
+
+
+
+
+
+
+
+
+
