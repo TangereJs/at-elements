@@ -3,6 +3,9 @@
   "private": true,
   "dependencies": {
     "polymer": "Polymer/polymer#master",
+    "core-elements": "TangereJs/core-elements#master",
+    "core-icons": "TangereJs/core-icons#master",
+    "core-media-query": "TangereJs/core-media-query#master",
     "core-ajax": "Polymer/core-ajax#master",    
     "at-app-list": "TangereJs/at-app-list#master",
     "at-app-scaffold": "TangereJs/at-app-scaffold#master",
