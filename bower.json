@@ -19,7 +19,9 @@
     "at-carbon-action": "TangereJs/at-carbon-action#master",
     "at-carbon-clamp": "TangereJs/at-carbon-clamp#master",
     "at-carbon-container": "TangereJs/at-carbon-container#master",
-    "at-carbon-message": "TangereJs/at-carbon-message#master"
+    "at-carbon-message": "TangereJs/at-carbon-message#master",
+    "d3": "TangereJs/d3#master",
+    "d3-elements": "TangereJs/d3-elements#master"
   }
 }
 
