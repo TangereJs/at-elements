@@ -33,3 +33,6 @@ If the components should be usable in the designer a metadata.html file needs to
 After adding the metadata.html the component should appear in the designer.
 
 How to define a metadata.html file is explained at https://github.com/TangereJs/designer#metadatahtml 
+
+Add the new component to the components.list (https://github.com/TangereJs/designer/blob/master/components.list)
+
