@@ -14,6 +14,7 @@
     "at-core-router": "TangereJs/at-core-router#master",
     "at-core-list": "TangereJs/at-core-list#master",
     "at-core-form": "TangereJs/at-core-form#master",
+    "at-core-searchbox": "TangereJs/at-core-searchbox#master",
     "at-core-spinner": "TangereJs/at-core-spinner#master",
     "at-core-activity": "TangereJs/at-core-activity#master",
     "at-carbon-action": "TangereJs/at-carbon-action#master",
@@ -24,7 +25,8 @@
     "at-chart-core": "TangereJs/at-chart-core#master",
     "d3": "TangereJs/d3#master",
     "d3-elements": "TangereJs/d3-elements#master",
-    "c3": "TangereJs/c3#master"
+    "c3": "TangereJs/c3#master",
+    "speech-mic": "PolymerLabs/speech-mic#master"
   }
 }
 
