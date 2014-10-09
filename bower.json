@@ -25,6 +25,7 @@
     "at-chart-core": "TangereJs/at-chart-core#master",
 	"at-form-daterange": "TangereJs/at-form-daterange#master",
 	"at-form-ajax": "TangereJs/at-form-ajax#master",
+	"at-form-file": "TangereJs/at-form-file#master",
     "d3": "TangereJs/d3#master",
     "d3-elements": "TangereJs/d3-elements#master",
     "c3": "TangereJs/c3#master",
