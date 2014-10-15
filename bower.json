@@ -8,6 +8,7 @@
     "core-media-query": "TangereJs/core-media-query#master",
     "core-ajax": "Polymer/core-ajax#master",    
     "at-app-list": "TangereJs/at-app-list#master",
+    "at-app-search": "TangereJs/at-app-search#master",
     "at-app-scaffold": "TangereJs/at-app-scaffold#master",
     "at-core-data-sample": "TangereJs/at-core-data-sample#master",
     "at-core-theme": "TangereJs/at-core-theme#master",
