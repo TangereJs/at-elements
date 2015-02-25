@@ -31,6 +31,7 @@
     "at-form-checkbox": "TangereJs/at-form-checkbox#master",
     "at-form-field": "TangereJs/at-form-field#master",
     "at-form-lookup": "TangereJs/at-form-lookup#master",
+    "at-form": "TangereJs/at-form#master",
     "d3": "TangereJs/d3#master",
     "d3-elements": "TangereJs/d3-elements#master",
     "c3": "TangereJs/c3#master",
