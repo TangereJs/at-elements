@@ -39,17 +39,8 @@
     "c3": "TangereJs/c3#master",
     "liquid.js": "TangereJs/liquid.js#master",
     "liquid-template": "TangereJs/liquid-template#0.8-preview",
-    "speech-mic": "PolymerLabs/speech-mic#master"
-	"at-core-cardlayout": "TangereJs/at-core-cardlayout#master",
+    "speech-mic": "PolymerLabs/speech-mic#master",
+    "at-core-cardlayout": "TangereJs/at-core-cardlayout#master",
+    "at-form-input": "TangereJs/at-form-input#master"
   }
 }
-
-
-
-
-
-
-
-
-
-
