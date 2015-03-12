@@ -32,7 +32,7 @@
     "at-form-field": "TangereJs/at-form-field#master",
     "at-form-lookup": "TangereJs/at-form-lookup#master",
     "at-form": "TangereJs/at-form#master",
-    "at-form-toggle": "TangereJs/at-form-toggle#master",
+    "at-form-toggle": "TangereJs/at-form-toggle#0.8-preview",
     "at-form-codemirror": "TangereJs/at-form-codemirror#master",
     "at-form-input": "TangereJs/at-form-input#0.8-preview",
     "d3": "TangereJs/d3#master",
