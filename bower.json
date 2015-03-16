@@ -18,6 +18,7 @@
     "at-core-searchbox": "TangereJs/at-core-searchbox#master",
     "at-core-spinner": "TangereJs/at-core-spinner#master",
     "at-core-activity": "TangereJs/at-core-activity#master",
+    "at-core-mic": "TangereJs/at-core-activity#0.8-preview",
     "at-carbon-action": "TangereJs/at-carbon-action#master",
     "at-carbon-clamp": "TangereJs/at-carbon-clamp#master",
     "at-carbon-container": "TangereJs/at-carbon-container#master",
