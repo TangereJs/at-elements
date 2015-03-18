@@ -17,7 +17,7 @@
     "at-core-form": "TangereJs/at-core-form#master",
     "at-core-searchbox": "TangereJs/at-core-searchbox#master",
     "at-core-spinner": "TangereJs/at-core-spinner#master",
-    "at-core-activity": "TangereJs/at-core-activity#master",
+    "at-core-activity": "TangereJs/at-core-activity#0.8-preview",
     "at-core-mic": "TangereJs/at-core-mic#0.8-preview",
     "at-core-card": "TangereJs/at-core-card#0.8-preview",
     "at-carbon-action": "TangereJs/at-carbon-action#master",
