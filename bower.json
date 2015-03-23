@@ -24,7 +24,7 @@
     "at-carbon-clamp": "TangereJs/at-carbon-clamp#master",
     "at-carbon-container": "TangereJs/at-carbon-container#master",
     "at-carbon-message": "TangereJs/at-carbon-message#master",
-    "at-carbon-moment": "TangereJs/at-carbon-moment#master",
+    "at-carbon-moment": "TangereJs/at-carbon-moment#0.8-preview",
     "at-chart-core": "TangereJs/at-chart-core#master",
     "at-form-daterange": "TangereJs/at-form-daterange#master",
     "at-form-ajax": "TangereJs/at-form-ajax#master",
