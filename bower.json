@@ -6,17 +6,18 @@
     "core-elements": "TangereJs/core-elements#master",
     "core-icons": "TangereJs/core-icons#master",
     "core-media-query": "TangereJs/core-media-query#0.8-preview",
-    "core-ajax": "Polymer/core-ajax#master",
-    "at-app-list": "TangereJs/at-app-list#master",
+    "core-ajax": "Polymer/core-ajax#0.8-preview",
+    "at-app-list": "TangereJs/at-app-list#0.8-preview",
     "at-app-search": "TangereJs/at-app-search#master",
-    "at-app-scaffold": "TangereJs/at-app-scaffold#master",
+    "at-app-scaffold": "TangereJs/at-app-scaffold#0.8-preview",
+    "at-app-embed": "TangereJs/at-app-embed#0.8-preview",
     "at-core-data-sample": "TangereJs/at-core-data-sample#master",
     "at-core-theme": "TangereJs/at-core-theme#0.8-preview",
-    "at-core-router": "TangereJs/at-core-router#master",
-    "at-core-list": "TangereJs/at-core-list#master",
+    "at-core-router": "TangereJs/at-core-router#0.8-preview",
+    "at-core-list": "TangereJs/at-core-list#0.8-preview",
     "at-core-form": "TangereJs/at-core-form#master",
     "at-core-searchbox": "TangereJs/at-core-searchbox#master",
-    "at-core-spinner": "TangereJs/at-core-spinner#master",
+    "at-core-spinner": "TangereJs/at-core-spinner#0.8-preview",
     "at-core-activity": "TangereJs/at-core-activity#0.8-preview",
     "at-core-mic": "TangereJs/at-core-mic#0.8-preview",
     "at-core-card": "TangereJs/at-core-card#0.8-preview",
@@ -41,7 +42,6 @@
     "d3-elements": "TangereJs/d3-elements#master",
     "c3": "TangereJs/c3#master",
     "liquid.js": "TangereJs/liquid.js#master",
-    "liquid-template": "TangereJs/liquid-template#0.8-preview",
-    "speech-mic": "PolymerLabs/speech-mic#master"
+    "liquid-template": "TangereJs/liquid-template#0.8-preview"
   }
 }
