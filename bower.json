@@ -21,7 +21,7 @@
     "at-core-activity": "TangereJs/at-core-activity#0.8-preview",
     "at-core-mic": "TangereJs/at-core-mic#0.8-preview",
     "at-core-card": "TangereJs/at-core-card#0.8-preview",
-    "at-core-card": "TangereJs/at-core-cardlayout #0.8-preview",    
+    "at-core-cardlayout": "TangereJs/at-core-cardlayout #0.8-preview",    
     "at-carbon-action": "TangereJs/at-carbon-action#master",
     "at-carbon-clamp": "TangereJs/at-carbon-clamp#0.8-preview",
     "at-carbon-container": "TangereJs/at-carbon-container#master",
