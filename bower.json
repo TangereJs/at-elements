@@ -24,6 +24,7 @@
     "at-core-cardlayout": "TangereJs/at-core-cardlayout #0.8-preview",
     "at-core-view": "TangereJs/at-core-view#0.8-preview",
     "at-core-searchbox": "TangereJs/at-core-searchbox#0.8-preview",
+    "at-core-signals": "TangereJs/at-core-signals#0.8-preview",
     "at-core-spinner": "TangereJs/at-core-spinner#0.8-preview",
     "at-carbon-action": "TangereJs/at-carbon-action#master",
     "at-carbon-clamp": "TangereJs/at-carbon-clamp#0.8-preview",
