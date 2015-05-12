@@ -36,6 +36,22 @@
     "at-core-spinner": "TangereJs/at-core-spinner#0.8-preview",
     "at-core-theme": "TangereJs/at-core-theme#0.8-preview",
     "at-core-view": "TangereJs/at-core-view#0.8-preview",
-    "at-form": "TangereJs/at-form#0.8-preview"
+    "at-form": "TangereJs/at-form#0.8-preview",
+    "at-form-ajax": "TangereJs/at-form-ajax#master",
+    "at-form-checkbox": "TangereJs/at-form-checkbox#0.8-preview",
+    "at-form-codemirror": "TangereJs/at-form-codemirror#master",
+    "at-form-daterange": "TangereJs/at-form-daterange#master",
+    "at-form-field": "TangereJs/at-form-field#master",
+    "at-form-file": "TangereJs/at-form-file#0.8-preview",
+    "at-form-input": "TangereJs/at-form-input#0.8-preview",
+    "at-form-input": "TangereJs/at-form-input#0.8-preview",
+    "at-form-lookup": "TangereJs/at-form-lookup#0.8-preview",
+    "at-form-rule-edit": "TangereJs/at-form-rule-edit#master",
+    "at-form-toggle": "TangereJs/at-form-toggle#0.8-preview",
+    "c3": "TangereJs/c3#master",
+    "d3": "TangereJs/d3#master",
+    "d3-elements": "TangereJs/d3-elements#master",
+    "liquid-template": "TangereJs/liquid-template#0.8-preview",
+    "liquid.js": "TangereJs/liquid.js#master"
   }
 }
