@@ -17,25 +17,7 @@
     "at-carbon-message": "TangereJs/at-carbon-message#0.8-preview",
     "at-carbon-moment": "TangereJs/at-carbon-moment#0.8-preview",
     "at-carbon-progress": "TangereJs/at-carbon-progress#0.8-preview",
-    "at-carbon-tabs": "TangereJs/at-carbon-tabs#0.8-preview",
-    "at-chart-core": "TangereJs/at-chart-core#0.8-preview",
-    "at-chart-inline": "TangereJs/at-chart-inline#0.8-preview",
-    "at-core-activity": "TangereJs/at-core-activity#0.8-preview",
-    "at-core-busy": "TangereJs/at-core-busy#0.8-preview",
-    "at-core-card": "TangereJs/at-core-card#0.8-preview",
-    "at-core-cardlayout": "TangereJs/at-core-cardlayout #0.8-preview",
-    "at-core-data-sample": "TangereJs/at-core-data-sample#master",
-    "at-core-form": "TangereJs/at-core-form#master",
-    "at-core-list": "TangereJs/at-core-list#0.8-preview",
-    "at-core-mic": "TangereJs/at-core-mic#0.8-preview",
-    "at-core-router": "TangereJs/at-core-router#0.8-preview",
-    "at-core-searchbox": "TangereJs/at-core-searchbox#0.8-preview",
-    "at-core-searchbox": "TangereJs/at-core-searchbox#0.8-preview",
-    "at-core-signals": "TangereJs/at-core-signals#0.8-preview",
-    "at-core-spinner": "TangereJs/at-core-spinner#0.8-preview",
-    "at-core-spinner": "TangereJs/at-core-spinner#0.8-preview",
-    "at-core-theme": "TangereJs/at-core-theme#0.8-preview",
-    "at-core-view": "TangereJs/at-core-view#0.8-preview",
-    "at-form": "TangereJs/at-form#0.8-preview"
+    "at-carbon-tabs": "TangereJs/at-carbon-tabs#0.8-preview"
+
   }
 }
