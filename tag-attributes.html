@@ -1,0 +1,50 @@
+<link rel="import" href="../polymer/polymer.html">
+
+<dom-module id="tag-attributes">
+  <style>
+
+  </style>
+  <template>
+    <textarea id="catalogValue" rows="15" cols="50"/>
+  </template>
+  <script>
+    'use strict';
+    Polymer({
+      is: 'tag-attributes',
+      properties: {
+        catalog: {
+          type: String,
+          value: function() {
+            return {};
+          }
+        }
+      },
+      _scopeCssViaAttr: true,
+      ready: function() {
+        debugger;
+        var result = {};
+        var currentGroup;
+        var self = this;
+        var registrations = Polymer.telemetry.registrations;
+
+        registrations.forEach(function(registration, index) {
+          var elementName = registration.is;
+          var element;
+          var propertyNames;
+
+          if (elementName.indexOf("at-") !== -1) {
+            element = document.createElement(elementName);
+            propertyNames = Object.keys(element.properties);
+            result[elementName] = {
+              attributes: propertyNames
+            };
+          }
+        });
+
+        this.$.catalogValue = JSON.stringify(result, null, ' ');
+
+        this.catalog = result;
+      }
+    });
+  </script>
+</dom-module>
