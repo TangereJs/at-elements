@@ -5,7 +5,7 @@
 
   </style>
   <template>
-	  <textarea id="catalogValue" rows="15" cols="50" ></textarea>
+	  <textarea id="catalogValue" rows="15" cols="150" ></textarea>
   </template>
   <script>
     'use strict';
@@ -21,7 +21,6 @@
       },
       _scopeCssViaAttr: true,
       ready: function() {
-        debugger;
         var result = {};
         var currentGroup;
         var self = this;
@@ -41,7 +40,7 @@
           }
         });
 
-        this.$.catalogValue = JSON.stringify(result, null, ' ');
+        this.$.catalogValue.value = JSON.stringify(result, null, ' ');
 
         this.catalog = result;
       }
