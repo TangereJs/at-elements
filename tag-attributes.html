@@ -2,10 +2,15 @@
 
 <dom-module id="tag-attributes">
   <style>
-
   </style>
   <template>
-	  <textarea id="catalogValue" rows="15" cols="150" ></textarea>
+    <div>
+        <template is="dom-repeat" items="{{catalog}}">
+          <div>
+            <span>"{{item.name}}": { "attributes": [[_computeAttributesArrayString(item.attributes)]] }</span>
+          </div>
+        </template>
+    </div>
   </template>
   <script>
     'use strict';
@@ -13,15 +18,16 @@
       is: 'tag-attributes',
       properties: {
         catalog: {
-          type: String,
+          type: Array,
           value: function() {
-            return {};
-          }
+            return [];
+          },
+          notify: true
         }
       },
       _scopeCssViaAttr: true,
       ready: function() {
-        var result = {};
+        var result = [];
         var currentGroup;
         var self = this;
         var registrations = Polymer.telemetry.registrations;
@@ -34,15 +40,34 @@
           if (elementName.indexOf("at-") !== -1) {
             element = document.createElement(elementName);
             propertyNames = Object.keys(element.properties);
-            result[elementName] = {
+            result.push({
+              name: elementName,
               attributes: propertyNames
-            };
+            });
           }
         });
 
-        this.$.catalogValue.value = JSON.stringify(result, null, '');
-
         this.catalog = result;
+      },
+      _computeAttributesArrayString: function (attributes) {
+        var result = "";
+        var separator = ", "
+
+        var i;
+        var len = attributes.length
+        var attribute;
+
+        result += "["
+        for (i = 0; i < len; i++) {
+          var attribute = attributes[i];
+          result += "\"" + attribute.toString() + "\"";
+          if (i < len-1) {
+            result += separator;
+          }
+        }
+        result += "]";
+
+        return result;
       }
     });
   </script>

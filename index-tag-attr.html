@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>at-elements-catalog</title>
+  <title>at-elements attributes</title>
 </head>
 <script src="../webcomponentsjs/webcomponents-lite.js" charset="utf-8"></script>
 <link rel="import" href="../polymer/polymer.html">
@@ -15,12 +15,23 @@
     margin: 0 13%;
     text-align: center;
   }
+
+  .results-container {
+    margin: 0 8%;
+  }
 </style>
 
 <body>
   <div class="title-container">
-    <h2>at elements catalog</h2>
+    <h2>at elements attributes</h2>
+    <p>
+      This is at-elements demo for tag-attributes element.<br/>
+      This element is used to generate a list of all elements and their public attributes.<br/>
+      This list is later copy pasted into <a href="https://github.com/MobilityPortal/MobilityPortal.Builder/blob/master/src/HtmlTags.json"> MobilityPortalBuilder/src/HTMLTags.json</a> file.
+    </p>
   </div>
-  <tag-attributes id="tagAttributes"></tag-attributes>
+  <div class="results-container">
+    <tag-attributes id="tagAttributes"></tag-attributes>
+  </div>
 </body>
 </html>
