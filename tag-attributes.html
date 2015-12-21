@@ -7,7 +7,7 @@
     <div>
         <template is="dom-repeat" items="{{catalog}}">
           <div>
-            <span>"{{item.name}}": { "attributes": [[_computeAttributesArrayString(item.attributes)]] }</span>
+            <span>"{{item.name}}": { "attributes": [[_computeAttributesArrayString(item.attributes)]] }[[_computeComma(index)]]</span>
           </div>
         </template>
     </div>
@@ -68,6 +68,13 @@
         result += "]";
 
         return result;
+      },
+      _computeComma: function(index) {
+        if (index < this.catalog.length-1) {
+          return ",";
+        } else {
+          return "";
+        }
       }
     });
   </script>
