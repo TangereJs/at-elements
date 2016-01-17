@@ -56,6 +56,7 @@
     "at-rule-conditions": "TangereJs/at-rule-conditions#0.8-preview",
     "at-rule-edit": "TangereJs/at-rule-edit#0.8-preview",
     "at-form-ruleset": "TangereJs/at-form-ruleset#0.8-preview",
+    "at-theme": "TangereJs/at-theme#0.8-preview",
     "c3": "TangereJs/c3#master",
     "d3": "TangereJs/d3#master",
     "d3-elements": "TangereJs/d3-elements#master",
