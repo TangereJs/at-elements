@@ -3,7 +3,7 @@
   "private": true,
   "dependencies": {
     "polymer": "Polymer/polymer#0.8-preview",
-    "core-elements": "TangereJs/core-elements#master",
+    "paper-styles": "TangereJs/paper-styles#0.8-preview",
     "core-icons": "TangereJs/core-icons#master",
     "core-media-query": "TangereJs/core-media-query#master",
     "core-ajax": "Polymer/core-ajax#master",    
