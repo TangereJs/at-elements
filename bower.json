@@ -62,7 +62,7 @@
     "d3-elements": "TangereJs/d3-elements#master",
     "liquid-template": "TangereJs/liquid-template#0.8-preview",
     "liquid.js": "TangereJs/liquid.js#master",
-    "paper-elements": "Polymer/paper-elements#master",
+    "paper-elements": "PolymerElements/paper-elements#master",
     "paper-styles": "TangereJs/paper-styles#0.8-preview"
   }
 }
