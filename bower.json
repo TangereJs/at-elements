@@ -2,6 +2,7 @@
   "name": "at-elements",
   "private": true,
   "dependencies": {
+    "web-component-tester": "Polymer/web-component-tester#master",
     "polymer": "Polymer/polymer#master",
     "tangere": "TangereJs/Tangere#0.8-preview",
     "core-media-query": "TangereJs/core-media-query#0.8-preview",
