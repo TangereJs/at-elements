@@ -73,6 +73,8 @@
     "at-form-textarea": "TangereJs/at-form-textarea#0.8-preview",
     "at-form-input": "TangereJs/at-form-input#0.8-preview",
     "at-i18n": "TangereJs/at-i18n#0.8-preview",
+    "at-silver-datasource": "TangereJs/at-silver-datasource#0.8-preview",
+    "at-silver-transform": "TangereJs/at-silver-transform#0.8-preview",
     "at-rule-actions": "TangereJs/at-rule-actions#0.8-preview",
     "at-rule-conditions": "TangereJs/at-rule-conditions#0.8-preview",
     "at-rule-edit": "TangereJs/at-rule-edit#0.8-preview",
