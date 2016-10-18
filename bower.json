@@ -97,5 +97,5 @@
     "paper-elements": "PolymerElements/paper-elements#master",
     "paper-styles": "TangereJs/paper-styles#0.8-preview"
   },
-  "version": "0.0.1.2"
+  "version": "0.0.1.4"
 }
