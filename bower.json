@@ -106,7 +106,8 @@
     "liquid-template": "TangereJs/liquid-template#0.8-preview",
     "liquid.js": "TangereJs/liquid.js#master",
     "paper-elements": "PolymerElements/paper-elements#master",
-    "paper-styles": "TangereJs/paper-styles#0.8-preview"
+    "paper-styles": "TangereJs/paper-styles#0.8-preview",
+    "TangereJs/google-apis": "TangereJs/google-apis#master"
   },
   "version": "0.0.1.9"
 }
