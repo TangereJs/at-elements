@@ -17,17 +17,12 @@
         catalog: {
           type: Object,
           value: function() {
-            return {};
+            return null;
           }
         }
       },
       ready: function() {
-        var result = {
-          id: 'at-elements',
-          title: 'at-elements',
-          open: 'true',
-          children: []
-        };
+        var result = [];
 
         var currentGroup;
         var self = this;
@@ -40,10 +35,10 @@
 
           if (elementName.indexOf("at-") !== -1) {
             var groupName = self._computeGroupNameForElementName(elementName);
-            currentGroup = self._groupExists(result.children, groupName);
+            currentGroup = self._groupExists(result, groupName);
             if (!currentGroup) {
               currentGroup = self._createGroup(groupName);
-              result.children.push(currentGroup);
+              result.push(currentGroup);
             }
 
             if (registration.$meta && isArray(registration.$meta)) {
@@ -61,17 +56,17 @@
         });
 
         // sort groups by name
-        result.children.sort(function(param1, param2) {
+        result.sort(function(param1, param2) {
           return param1.id > param2.id ? 1 : -1;
         });
 
         // sort elements by name in each group
         var i;
-        var len = result.children.length;
+        var len = result.length;
         var tmp;
 
         for (var i = 0; i < len; i++) {
-          tmp = result.children[i];
+          tmp = result[i];
           tmp.children.sort(function(param1, param2) {
             return param1.id > param2.id ? 1 : -1;
           });
