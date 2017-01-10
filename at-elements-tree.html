@@ -45,7 +45,7 @@
               var meta = registration.$meta;
 
               meta.forEach(function(entry, index) {
-                newEntry = self._createElementMeta(elementName, entry.title, entry.icon);
+                newEntry = self._createElementMeta(elementName+"__"+index, entry.title, entry.icon);
                 currentGroup.children.push(newEntry);
               });
             } else {
