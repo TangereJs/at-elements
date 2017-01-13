@@ -68,9 +68,7 @@
     "at-form-checkbox": "TangereJs/at-form-checkbox#0.8-preview",
     "at-form-codemirror": "TangereJs/at-form-codemirror#0.8-preview",
     "at-form-complex": "TangereJs/at-form-complex#0.8-preview",
-    "at-form-cron": "TangereJs/at-form-cron#0.8-preview",
-    "at-form-date": "TangereJs/at-form-date#0.8-preview",
-    "at-form-daterange": "TangereJs/at-form-daterange#0.8-preview"
+    "at-form-cron": "TangereJs/at-form-cron#0.8-preview"
   },
   "version": "0.0.1.9"
 }
