@@ -62,12 +62,10 @@
     "at-doc-viewer": "TangereJs/at-doc-viewer#0.8-preview",
     "at-doc-snippet": "TangereJs/at-doc-snippet#0.8-preview",
     "at-form": "TangereJs/at-form#0.8-preview",
+    "at-form-complex": "TangereJs/at-form-complex#0.8-preview",
     "at-form-ajax": "TangereJs/at-form-ajax#0.8-preview",
-    "at-form-array": "TangereJs/at-form-array#0.8-preview",
-    "at-form-behaviors": "TangereJs/at-form-behaviors#0.8-preview",
-    "at-form-checkbox": "TangereJs/at-form-checkbox#0.8-preview",
-    "at-form-codemirror": "TangereJs/at-form-codemirror#0.8-preview",
-    "at-form-complex": "TangereJs/at-form-complex#0.8-preview"
+    "at-form-array": "TangereJs/at-form-array#0.8-preview"
+    
   },
   "version": "0.0.1.9"
 }
