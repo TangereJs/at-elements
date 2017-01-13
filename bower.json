@@ -93,13 +93,7 @@
     "at-silver-item": "TangereJs/at-silver-item#0.8-preview",
     "at-silver-list": "TangereJs/at-silver-list#0.8-preview",
     "at-silver-script": "TangereJs/at-silver-script#0.8-preview",
-    "at-silver-transform": "TangereJs/at-silver-transform#0.8-preview",
-    "at-rule-actions": "TangereJs/at-rule-actions#0.8-preview",
-    "at-rule-conditions": "TangereJs/at-rule-conditions#0.8-preview",
-    "at-rule-edit": "TangereJs/at-rule-edit#0.8-preview",
-    "at-form-ruleset": "TangereJs/at-form-ruleset#0.8-preview",
-    "at-theme": "TangereJs/at-theme#0.8-preview",
-    "paper-styles": "TangereJs/paper-styles#0.8-preview"
+    "at-silver-transform": "TangereJs/at-silver-transform#0.8-preview"
   },
   "version": "0.0.1.9"
 }
