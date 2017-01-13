@@ -58,8 +58,7 @@
     "at-doc-demo": "TangereJs/at-doc-demo#0.8-preview",
     "at-doc-parser": "TangereJs/at-doc-parser#0.8-preview",
     "at-doc-viewer": "TangereJs/at-doc-viewer#0.8-preview",
-    "at-doc-snippet": "TangereJs/at-doc-snippet#0.8-preview",
-    
+    "at-doc-snippet": "TangereJs/at-doc-snippet#0.8-preview"    
   },
   "version": "0.0.1.9"
 }
