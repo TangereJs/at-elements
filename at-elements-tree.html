@@ -1,0 +1,125 @@
+<link rel="import" href="../tangere/tangere.html">
+<link rel="import" href="at-elements.html">
+<link rel="import" href="../at-carbon-tree/at-carbon-tree.html">
+<dom-module id="at-elements-tree">
+  <template>
+    <style>
+    </style>
+    <div class="vertical layout groups-container">
+      <at-carbon-tree data="{{catalog}}"></at-carbon-tree>
+    </div>
+  </template>
+  <script>
+    'use strict';
+    Polymer({
+      is: 'at-elements-tree',
+      properties: {
+        catalog: {
+          type: Object,
+          value: function() {
+            return null;
+          }
+        }
+      },
+      ready: function() {
+        var result = [];
+
+        var currentGroup;
+        var self = this;
+        var registrations = Polymer.telemetry.registrations;
+
+        registrations.forEach(function(registration, index) {
+          var elementName = registration.is;
+          var elementTitle = elementName;
+          var newEntry;
+
+          if (elementName.indexOf("at-") !== -1) {
+            var groupName = self._computeGroupNameForElementName(elementName);
+            currentGroup = self._groupExists(result, groupName);
+            if (!currentGroup) {
+              currentGroup = self._createGroup(groupName);
+              result.push(currentGroup);
+            }
+
+            if (registration.$meta && isArray(registration.$meta)) {
+              var meta = registration.$meta;
+
+              meta.forEach(function(entry, index) {
+                newEntry = self._createElementMeta(elementName+"__"+index, entry.title, entry.icon);
+                currentGroup.children.push(newEntry);
+              });
+            } else {
+              newEntry = self._createElementMeta(elementName, elementTitle, "now:wrench");
+              currentGroup.children.push(newEntry);
+            }
+          }
+        });
+
+        // sort groups by name
+        result.sort(function(param1, param2) {
+          return param1.id > param2.id ? 1 : -1;
+        });
+
+        // sort elements by name in each group
+        var i;
+        var len = result.length;
+        var tmp;
+
+        for (var i = 0; i < len; i++) {
+          tmp = result[i];
+          tmp.children.sort(function(param1, param2) {
+            return param1.id > param2.id ? 1 : -1;
+          });
+        }
+
+        this.catalog = result;
+      },
+
+      _computeGroupNameForElementName: function(elementName) {
+        var nameParts = elementName.split('-');
+        var dashCount = nameParts.length;
+        var groupName = 'generic';
+
+        if (dashCount > 2) {
+          groupName = nameParts[1];
+        }
+
+        return groupName;
+      },
+
+      _groupExists: function(groups, groupName) {
+        var i;
+        var len = groups.length;
+        var result = false;
+        var tmp;
+        for (i = 0; i < len; i++) {
+          tmp = groups[i];
+          if (tmp.id === groupName) {
+            result = tmp;
+            break;
+          }
+        }
+        return result;
+      },
+
+      _createGroup: function(groupName) {
+        var group = {
+          id: groupName,
+          title: groupName,
+          children: []
+        };
+
+        return group;
+      },
+
+      _createElementMeta: function(elementName, elementTitle, elementIcon) {
+        var elementMeta = {
+          id: elementName,
+          title: elementTitle,
+          icon: elementIcon
+        };
+        return elementMeta;
+      }
+    });
+  </script>
+</dom-module>

@@ -1,0 +1,163 @@
+<link rel="import" href="at-elements.html">
+
+<link rel="import" href="../iron-flex-layout/iron-flex-layout.html">
+
+<dom-module id="at-elements-catalog">
+  <style>
+    .groups-container {
+      margin: 0 13%;
+    }
+
+    .groups-container > .group-container {
+      margin: 5px 0;
+      background-color: gray;
+    }
+
+    .group-container > .group-name {
+      margin: 0 3px;
+    }
+
+    .group-container > .elements-container {
+      background-color: lightgray;
+    }
+
+    .elements-container > .element-container {}
+
+    .element-container > .element-title {
+      margin: 0 5px;
+    }
+
+    .element-container > .element-name {}
+  </style>
+  <template>
+    <at-core-theme></at-core-theme>
+    <div class="vertical layout groups-container">
+      <template is="dom-repeat" items="{{catalog}}">
+        <div class="group-container">
+          <div class="group-name">
+            <h3>{{item.groupName}} elements</h3>
+          </div>
+          <div class="elements-container">
+            <template is="dom-repeat" items="{{item.elements}}" as="element">
+              <div class="horizontal layout element-container">
+                <div class="element-title flex-2">
+                  <label>{{element.title}}</label>
+                </div>
+                <div class="element-name flex-10">
+                  <a href="/components/{{element.name}}/index.html">{{element.name}}</a>
+                </div>
+              </div>
+            </template>
+          </div>
+        </div>
+      </template>
+    </div>
+  </template>
+  <script>
+    'use strict';
+    Polymer({
+      is: 'at-elements-catalog',
+      properties: {
+        catalog: {
+          type: [],
+          value: function() {
+            return [];
+          }
+        }
+      },
+      _scopeCssViaAttr: true,
+      ready: function() {
+        var result = [];
+        var currentGroup;
+        var self = this;
+        var registrations = Polymer.telemetry.registrations;
+
+        registrations.forEach(function(registration, index) {
+          var elementName = registration.is;
+          var elementTitle = elementName;
+          var newEntry;
+
+          if (elementName.indexOf("at-") !== -1) {
+            var groupName = self._computeGroupNameForElementName(elementName);
+            currentGroup = self._groupExists(result, groupName);
+            if (!currentGroup) {
+              currentGroup = self._createGroup(groupName);
+              result.push(currentGroup);
+            }
+
+            if (registration.$meta && isArray(registration.$meta)) {
+              var meta = registration.$meta;
+
+              meta.forEach(function(entry, index) {
+                newEntry = self._createElementMeta(elementName, entry.title);
+                currentGroup.elements.push(newEntry);
+              });
+            } else {
+              newEntry = self._createElementMeta(elementName, elementTitle);
+              currentGroup.elements.push(newEntry);
+            }
+          }
+        });
+
+        // sort groups by name
+        result.sort(function(param1, param2) {
+          return param1.groupName > param2.groupName;
+        });
+
+        // sort elements by name in each group
+        var i;
+        var len = result.length;
+        var tmp;
+
+        for (var i = 0; i < len; i++) {
+          tmp = result[i];
+          tmp.elements.sort(function(param1, param2) {
+            return param1.name > param2.name;
+          });
+        }
+
+        this.catalog = result;
+      },
+      _computeGroupNameForElementName: function(elementName) {
+        var nameParts = elementName.split('-');
+        var dashCount = nameParts.length;
+        var groupName = 'generic';
+
+        if (dashCount > 2) {
+          groupName = nameParts[1];
+        }
+
+        return groupName;
+      },
+      _groupExists: function(groups, groupName) {
+        var i;
+        var len = groups.length;
+        var result = false;
+        var tmp;
+        for (i = 0; i < len; i++) {
+          tmp = groups[i];
+          if (tmp.groupName === groupName) {
+            result = tmp;
+            break;
+          }
+        }
+        return result;
+      },
+      _createGroup: function(groupName) {
+        var group = {
+          groupName: groupName,
+          elements: []
+        };
+
+        return group;
+      },
+      _createElementMeta: function(elementName, elementTitle) {
+        var elementMeta = {
+          name: elementName,
+          title: elementTitle
+        };
+        return elementMeta;
+      }
+    });
+  </script>
+</dom-module>

@@ -1,0 +1,80 @@
+<link rel="import" href="../tangere/tangere.html">
+
+<dom-module id="tag-attributes">
+  <style>
+  </style>
+  <template>
+    <div>
+        <template is="dom-repeat" items="{{catalog}}">
+          <div>
+            <span>"{{item.name}}": { "attributes": [[_computeAttributesArrayString(item.attributes)]] }[[_computeComma(index)]]</span>
+          </div>
+        </template>
+    </div>
+  </template>
+  <script>
+    'use strict';
+    Polymer({
+      is: 'tag-attributes',
+      properties: {
+        catalog: {
+          type: Array,
+          value: function() {
+            return [];
+          },
+          notify: true
+        }
+      },
+      ready: function() {
+        var result = [];
+        var currentGroup;
+        var self = this;
+        var registrations = Polymer.telemetry.registrations;
+
+        registrations.forEach(function(registration, index) {
+          var elementName = registration.is;
+          var element;
+          var propertyNames;
+
+          if (elementName.indexOf("at-") !== -1) {
+            element = document.createElement(elementName);
+            propertyNames = Object.keys(element.properties);
+            result.push({
+              name: elementName,
+              attributes: propertyNames
+            });
+          }
+        });
+
+        this.catalog = result;
+      },
+      _computeAttributesArrayString: function (attributes) {
+        var result = "";
+        var separator = ", "
+
+        var i;
+        var len = attributes.length
+        var attribute;
+
+        result += "["
+        for (i = 0; i < len; i++) {
+          var attribute = attributes[i];
+          result += "\"" + attribute.toString() + "\"";
+          if (i < len-1) {
+            result += separator;
+          }
+        }
+        result += "]";
+
+        return result;
+      },
+      _computeComma: function(index) {
+        if (index < this.catalog.length-1) {
+          return ",";
+        } else {
+          return "";
+        }
+      }
+    });
+  </script>
+</dom-module>
