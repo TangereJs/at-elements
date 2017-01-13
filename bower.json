@@ -75,17 +75,7 @@
     "at-form-html": "TangereJs/at-form-html#0.8-preview",
     "at-form-image": "TangereJs/at-form-image#0.8-preview",
     "at-form-lookup": "TangereJs/at-form-lookup#0.8-preview",
-    "at-form-markdown": "TangereJs/at-form-markdown#0.8-preview",
-    "at-form-number": "TangereJs/at-form-number#0.8-preview",
-    "at-form-password": "TangereJs/at-form-password#0.8-preview",
-    "at-form-radio": "TangereJs/at-form-radio#0.8-preview",
-    "at-form-section": "TangereJs/at-form-section#0.8-preview",
-    "at-form-state": "TangereJs/at-form-state#0.8-preview",
-    "at-form-text": "TangereJs/at-form-text#0.8-preview",
-    "at-form-textarea": "TangereJs/at-form-textarea#0.8-preview",
-    "at-form-input": "TangereJs/at-form-input#0.8-preview",
-    "at-i18n": "TangereJs/at-i18n#0.8-preview",
-    "at-link": "TangereJs/at-link#0.8-preview"
+    "at-form-markdown": "TangereJs/at-form-markdown#0.8-preview"
   },
   "version": "0.0.1.9"
 }
