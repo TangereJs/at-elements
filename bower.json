@@ -62,8 +62,7 @@
     "at-doc-viewer": "TangereJs/at-doc-viewer#0.8-preview",
     "at-doc-snippet": "TangereJs/at-doc-snippet#0.8-preview",
     "at-form": "TangereJs/at-form#0.8-preview",   
-    "at-form-ajax": "TangereJs/at-form-ajax#0.8-preview",
-    "at-form-array": "TangereJs/at-form-array#0.8-preview"
+    "at-form-ajax": "TangereJs/at-form-ajax#0.8-preview"
     
   },
   "version": "0.0.1.9"
