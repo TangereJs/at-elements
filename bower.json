@@ -6,7 +6,7 @@
     "polymer": "Polymer/polymer#master",
     "tangere": "TangereJs/Tangere#0.8-preview",
     "core-media-query": "TangereJs/core-media-query#0.8-preview",
-    "core-ajax": "TangereJs/core-ajax#0.8-preview-main",
+   
     "at-app-embed": "TangereJs/at-app-embed#0.8-preview",
     "at-app-scaffold": "TangereJs/at-app-scaffold#0.8-preview",
     "at-carbon-action-button": "TangereJs/at-carbon-action-button#0.8-preview",
@@ -106,10 +106,12 @@
     "d3-elements": "TangereJs/d3-elements#master",
     "code-mirror": "TangereJs/code-mirror#0.8-preview",
     "liquid-template": "TangereJs/liquid-template#0.8-preview",
-    "liquid.js": "TangereJs/liquid.js#master",
-    "paper-elements": "PolymerElements/paper-elements#master",
+    "liquid.js": "TangereJs/liquid.js#master",    
     "paper-styles": "TangereJs/paper-styles#0.8-preview",
-    "google-apis": "TangereJs/google-apis#master"
+    "google-apis": "TangereJs/google-apis#master",
+    "core-ajax": "TangereJs/core-ajax#0.8-preview-main",
+    "marked-element": "TangereJs/marked-element#0.8-preview",
+    "moment": "TangereJs/moment#master"
   },
   "version": "0.0.1.9"
 }
