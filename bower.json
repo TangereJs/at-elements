@@ -5,8 +5,7 @@
     "web-component-tester": "Polymer/web-component-tester#master",
     "polymer": "Polymer/polymer#master",
     "tangere": "TangereJs/Tangere#0.8-preview",
-    "core-media-query": "TangereJs/core-media-query#0.8-preview",
-   
+    "core-media-query": "TangereJs/core-media-query#0.8-preview",   
     "at-app-embed": "TangereJs/at-app-embed#0.8-preview",
     "at-app-scaffold": "TangereJs/at-app-scaffold#0.8-preview",
     "at-carbon-action-button": "TangereJs/at-carbon-action-button#0.8-preview",
@@ -39,6 +38,7 @@
     "at-core-card": "TangereJs/at-core-card#0.8-preview",
     "at-core-cardlayout": "TangereJs/at-core-cardlayout#0.8-preview",
     "at-core-cardlist": "TangereJs/at-core-cardlist#0.8-preview",
+    "at-core-carousel": "TangereJs/at-core-carousel#0.8-preview",
     "at-core-dashboard": "TangereJs/at-core-dashboard#0.8-preview",
     "at-core-dropdown": "TangereJs/at-core-dropdown#0.8-preview",
     "at-core-form": "TangereJs/at-core-form#0.8-preview",
