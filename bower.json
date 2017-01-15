@@ -110,7 +110,7 @@
     "liquid.js": "TangereJs/liquid.js#master",    
     "paper-styles": "TangereJs/paper-styles#master",
     "google-apis": "TangereJs/google-apis#master",
-    "core-ajax": "TangereJs/core-ajax#0.8-preview-main",    
+    "core-ajax": "TangereJs/core-ajax#master",    
     "moment": "TangereJs/moment#master"
   },
   "version": "0.0.1.9"
