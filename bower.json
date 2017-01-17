@@ -114,5 +114,5 @@
     "core-ajax": "TangereJs/core-ajax#master",
     "moment": "TangereJs/moment#master"
   },
-  "version": "0.0.1.9"
+  "version": "0.0.1.11"
 }
