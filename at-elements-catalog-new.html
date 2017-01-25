@@ -1,0 +1,73 @@
+<link rel="import" href="at-elements.html">
+<link rel="import" href="../at-theme/at-theme.html">
+<link rel="import" href="../at-core-splitter/at-core-splitter.html">
+<link rel="import" href="../iron-flex-layout/iron-flex-layout-classes.html">
+<link rel="import" href="at-elements-tree.html">
+
+<dom-module id="at-elements-catalog-new">
+  <style include="iron-flex"></style>
+  <style include="iron-flex-alignment"></style>
+  <style include="iron-flex-factors"></style>
+  <style include="at-form-common"></style>
+  <style>
+    :host {
+      display: block;
+      box-sizing: border-box;
+    }
+
+    .left-column {
+      width: 400px;
+    }
+
+  </style>
+  <template>
+
+    <div class="horizontal layout">
+      <div class="left-column">
+        <at-elements-tree id="elementsTree"></at-elements-tree>
+      </div>
+      <at-core-splitter direction="left" min-size="128px"></at-core-splitter>
+      <div class="right-column flex">
+        <iframe id="iframe" frameborder="0" src="" width="100%" height="100%"></iframe>
+      </div>
+    </div>
+
+  </template>
+  <script>
+    'use strict';
+    Polymer({
+      is: 'at-elements-catalog-new',
+
+      properties: { },
+
+      listeners: {
+        'elementsTree.select' : '_handleElementTreeSelected'
+      },
+
+      ready: function() {
+
+      },
+
+      _handleElementTreeSelected: function (event) {
+        var elementName = event.detail.getAttribute('data-node-id');
+
+        if (elementName.indexOf('-') === -1) { return; }
+
+        var ununIndex = elementName.indexOf('__');
+        if (ununIndex > -1) {
+          elementName = elementName.substr(0, ununIndex);
+        }
+
+        console.log(elementName);
+
+        var pathParts = window.location.pathname.split("/");
+        pathParts[pathParts.length-2] = elementName;
+        pathParts[pathParts.length-1] = "index.html";
+        var path = pathParts.join("/");
+        var readmeDownloadUrl = [window.location.origin, path].join("");
+
+        this.$.iframe.setAttribute('src', readmeDownloadUrl);
+      }
+    });
+  </script>
+</dom-module>
