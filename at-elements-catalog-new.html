@@ -18,6 +18,20 @@
     .left-column {
       width: 400px;
     }
+
+    .right-column {
+      position: relative;
+    }
+
+    .frame-class {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+    }
+
+    .clear-float {
+      clear: both;
+    }
   </style>
   <template>
     <div class="horizontal layout">
@@ -25,8 +39,12 @@
         <at-elements-tree id="elementsTree"></at-elements-tree>
       </div>
       <at-core-splitter direction="left" min-size="128px"></at-core-splitter>
-      <div class="right-column flex">
-        <iframe id="iframe" frameborder="0" width="100%" height="100%"></iframe>
+      <div id="rightColumn" class="right-column flex">
+        <at-core-resize-sensor id="resizeSensor" on-resize-sensed="_handleResizeSensed"></at-core-resize-sensor>
+        <div class="clear-float"></div>
+        <div>
+          <iframe id="iframe" frameborder="0" class="frame-class"></iframe>
+        </div>
       </div>
     </div>
   </template>
@@ -43,6 +61,15 @@
 
       ready: function() {
 
+      },
+
+      _handleResizeSensed: function (event) {
+        var dimensions = event.detail.value;
+
+        var iframeClientRect = this.$.iframe.contentDocument.body.getBoundingClientRect();
+        rightColumn.style.height = iframeClientRect.height + "px";
+
+        console.log('resize sensed');
       },
 
       _handleElementTreeSelected: function(event) {
