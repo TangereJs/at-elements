@@ -48,6 +48,7 @@
     "at-core-list": "TangereJs/at-core-list#master",
     "at-core-mic": "TangereJs/at-core-mic#master",
     "at-core-modal": "TangereJs/at-core-modal#master",
+    "at-core-pdf": "TangereJs/at-core-pdf#master",
     "at-core-propform": "TangereJs/at-core-propform#master",
     "at-core-resize-sensor": "TangereJs/at-core-resize-sensor#master",
     "at-core-router": "TangereJs/at-core-router#master",
