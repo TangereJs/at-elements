@@ -3,34 +3,34 @@
 <link rel="import" href="../iron-flex-layout/iron-flex-layout.html">
 
 <dom-module id="at-elements-catalog">
-  <style>
-    .groups-container {
-      margin: 0 13%;
-    }
-
-    .groups-container > .group-container {
-      margin: 5px 0;
-      background-color: gray;
-    }
-
-    .group-container > .group-name {
-      margin: 0 3px;
-    }
-
-    .group-container > .elements-container {
-      background-color: lightgray;
-    }
-
-    .elements-container > .element-container {}
-
-    .element-container > .element-title {
-      margin: 0 5px;
-    }
-
-    .element-container > .element-name {}
-  </style>
   <template>
-    <at-core-theme></at-core-theme>
+    <style>
+      .groups-container {
+        margin: 0 13%;
+      }
+
+      .groups-container > .group-container {
+        margin: 5px 0;
+        background-color: gray;
+      }
+
+      .group-container > .group-name {
+        margin: 0 3px;
+      }
+
+      .group-container > .elements-container {
+        background-color: lightgray;
+      }
+
+      .elements-container > .element-container {}
+
+      .element-container > .element-title {
+        margin: 0 5px;
+      }
+
+      .element-container > .element-name {}
+    </style>
+
     <div class="vertical layout groups-container">
       <template is="dom-repeat" items="{{catalog}}">
         <div class="group-container">
@@ -65,7 +65,6 @@
           }
         }
       },
-      _scopeCssViaAttr: true,
       ready: function() {
         var result = [];
         var currentGroup;

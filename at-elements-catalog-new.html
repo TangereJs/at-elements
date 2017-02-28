@@ -5,35 +5,36 @@
 <link rel="import" href="at-elements-tree.html">
 
 <dom-module id="at-elements-catalog-new">
-  <style include="iron-flex"></style>
-  <style include="iron-flex-alignment"></style>
-  <style include="iron-flex-factors"></style>
-  <style include="at-form-common"></style>
-  <style>
-     :host {
-      display: block;
-      box-sizing: border-box;
-    }
-
-    .left-column {
-      width: 400px;
-    }
-
-    .right-column {
-      position: relative;
-    }
-
-    .frame-class {
-      position: absolute;
-      height: 100%;
-      width: 100%;
-    }
-
-    .clear-float {
-      clear: both;
-    }
-  </style>
   <template>
+    <style include="iron-flex"></style>
+    <style include="iron-flex-alignment"></style>
+    <style include="iron-flex-factors"></style>
+    <style include="at-form-common"></style>
+    <style>
+       :host {
+        display: block;
+        box-sizing: border-box;
+      }
+
+      .left-column {
+        width: 400px;
+      }
+
+      .right-column {
+        position: relative;
+      }
+
+      .frame-class {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+      }
+
+      .clear-float {
+        clear: both;
+      }
+    </style>
+
     <div class="horizontal layout">
       <div class="left-column">
         <at-elements-tree id="elementsTree"></at-elements-tree>
