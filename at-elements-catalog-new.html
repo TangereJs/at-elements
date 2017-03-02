@@ -16,36 +16,63 @@
         box-sizing: border-box;
       }
 
-      .left-column {
-        width: 400px;
+      .header {
+        height: 80px;
+        max-height: 80px;
       }
 
-      .right-column {
+      .main-content {
+        margin-bottom: 80px;
         position: relative;
       }
 
+      .left-column {
+        width: 360px;
+      }
+
+      .elements-tree {
+        margin: 4px;
+      }
+
+      .right-column { }
+
       .frame-class {
-        position: absolute;
-        height: 100%;
         width: 100%;
+        height: 100%;
       }
 
       .clear-float {
         clear: both;
       }
+
+      .footer {
+        height: 80px;
+        background-color: #FFFFFF;
+      }
+
+      .footer.fixed {
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+      }
     </style>
 
-    <div class="horizontal layout">
-      <div class="left-column">
-        <at-elements-tree id="elementsTree"></at-elements-tree>
+    <div class="vertical layout">
+      <div id="catalogHeader" class="header">
+        <h4>at-elements catalog</h4>
       </div>
-      <at-core-splitter direction="left" min-size="128px"></at-core-splitter>
-      <div id="rightColumn" class="right-column flex">
-        <at-core-resize-sensor id="resizeSensor" on-resize-sensed="_handleResizeSensed"></at-core-resize-sensor>
-        <div class="clear-float"></div>
-        <div>
-          <iframe id="iframe" frameborder="0" class="frame-class"></iframe>
+      <div id="catalogMainContent" class="main-content horizontal layout">
+        <div class="left-column">
+          <at-elements-tree id="elementsTree" class="elements-tree"></at-elements-tree>
         </div>
+        <at-core-splitter direction="left" min-size="128px"></at-core-splitter>
+        <div class="right-column flex">
+            <iframe id="iframe" frameborder="0" class="frame-class"></iframe>
+        </div>
+      </div>
+      <div id="catalogFooter" class="footer fixed">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
       </div>
     </div>
   </template>
@@ -64,13 +91,56 @@
 
       },
 
-      _handleResizeSensed: function (event) {
-        var dimensions = event.detail.value;
+      attached: function () {
+        var iframe = this.$.iframe;
+        var elementsTree = this.$.elementsTree;
+        var self = this;
+        var isRunning = false;
 
-        var iframeClientRect = this.$.iframe.contentDocument.body.getBoundingClientRect();
-        rightColumn.style.height = iframeClientRect.height + "px";
+        var updateSizeInterval = setInterval(function () {
+          if (isRunning) { return; }
+          isRunning = true;
 
-        console.log('resize sensed');
+          var availableHeight = self._computeAvailableHeight();
+          var cmpHeight = self._computeCompleteHeight(window, elementsTree);
+
+          if (iframe.contentDocument && iframe.contentDocument.body) {
+            var iframeBodyHeight = self._computeCompleteHeight(iframe.contentWindow, iframe.contentDocument.body);
+            cmpHeight = Math.max(cmpHeight, iframeBodyHeight);
+          }
+
+          if (cmpHeight <= availableHeight) {
+            self.$.catalogMainContent.style.height = availableHeight + 'px';
+          } else {
+            self.$.catalogMainContent.style.height = cmpHeight + 'px';
+          }
+          isRunning = false;
+        }, 264);
+      },
+
+      _computeAvailableHeight: function () {
+        var result = 0;
+
+        var windowHeight = window.innerHeight;
+        var headerHeight = this._computeCompleteHeight(window, this.$.catalogHeader);
+        var footerHeight = this._computeCompleteHeight(window, this.$.catalogFooter);
+
+        result = windowHeight - headerHeight - footerHeight;
+
+        return result;
+      },
+
+      _computeCompleteHeight: function (windowParam, element) {
+        var completeHeight = 0;
+
+        var elementHeight = element.getBoundingClientRect().height;
+        var computedStyle = windowParam.getComputedStyle(element);
+        var marginTop = parseInt(computedStyle.getPropertyValue('margin-top'));
+        var marginBottom = parseInt(computedStyle.getPropertyValue('margin-bottom'));
+
+        completeHeight = elementHeight + marginTop + marginBottom;
+
+        return completeHeight;
       },
 
       _handleElementTreeSelected: function(event) {
