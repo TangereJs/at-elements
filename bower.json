@@ -114,6 +114,7 @@
     "liquid-template": "TangereJs/liquid-template#master",
     "liquid.js": "TangereJs/liquid.js#master",
     "paper-styles": "TangereJs/paper-styles#master",
+    "layout": "TangereJs/layout#master",
     "google-apis": "TangereJs/google-apis#master",
     "core-ajax": "TangereJs/core-ajax#master",
     "moment": "TangereJs/moment#master"
