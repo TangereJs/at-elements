@@ -15,7 +15,7 @@
     "at-carbon-collapse": "TangereJs/at-carbon-collapse#master",
     "at-carbon-date-picker": "TangereJs/at-carbon-date-picker#master",
     "at-carbon-dialog": "TangereJs/at-carbon-dialog#master",
-    "at-carbon-empty-state": "TangereJs/at-carbon-empty-state#master",    
+    "at-carbon-empty-state": "TangereJs/at-carbon-empty-state#master",
     "at-carbon-icon": "TangereJs/at-carbon-icon#master",
     "at-carbon-icon-button": "TangereJs/at-carbon-icon-button#master",
     "at-carbon-icon-color": "TangereJs/at-carbon-icon-color#master",
@@ -91,7 +91,7 @@
     "at-form-textarea": "TangereJs/at-form-textarea#master",
     "at-form-input": "TangereJs/at-form-input#master",
     "at-i18n": "TangereJs/at-i18n#master",
-    "at-journey": "TangereJs/at-journey#master",  
+    "at-journey": "TangereJs/at-journey#master",
     "at-link": "TangereJs/at-link#master",
     "at-map-google": "TangereJs/at-map-google#master",
     "at-silver-datasource": "TangereJs/at-silver-datasource#master",
@@ -119,5 +119,5 @@
     "core-ajax": "TangereJs/core-ajax#master",
     "moment": "TangereJs/moment#master"
   },
-  "version": "0.0.1.11"
+  "version": "0.0.1.13"
 }
