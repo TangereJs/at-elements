@@ -1,0 +1,227 @@
+<link rel="import" href="../tangere/tangere.html">
+
+<dom-module id="tag-attributes">
+  <style>
+
+  </style>
+  <template>
+    <div>
+      <template is="dom-repeat" items="{{catalog}}">
+        <div>
+          <span>"{{item.name}}": { attrs: [[_computeAttributesArrayString(item.attributes)]] }[[_computeComma(index)]]</span>
+        </div>
+      </template>
+    </div>
+  </template>
+  <script>
+  'use strict';
+  Polymer({
+    is: 'tag-attributes',
+    properties: {
+      catalog: {
+        type: Array,
+        value: function() {
+          return [];
+        },
+        notify: true
+      }
+    },
+    ready: function() {
+      var result = [];
+      var currentGroup;
+      var self = this;
+      var registrations = Polymer.telemetry.registrations;
+
+      registrations.forEach(function(registration, index) {
+        var properties;
+        var forResult;
+
+        function isObject(obj) {
+          return Object.prototype.toString.apply(obj) === "[object Object]";
+        }
+
+        function isArray(obj) {
+          return Object.prototype.toString.apply(obj) === "[object Array]";
+        }
+
+        if (registration.is.startsWith("at-")) {
+          forResult = {
+            name: registration.is,
+            attributes: {}
+          };
+
+          if (isObject(registration.properties)) {
+            var properties = registration.properties;
+            var attrs = self._processProperties(properties);
+            self._mergeObjects(forResult.attributes, attrs);
+          }
+
+          if (isArray(registration.behaviors)) {
+            registration.behaviors.forEach(function(behavior, index) {
+              if (isObject(behavior) && isObject(behavior.properties)) {
+                var attrs = self._processProperties(behavior.properties);
+                self._mergeObjects(forResult.attributes, attrs);
+              }
+            });
+          }
+
+          result.push(forResult);
+        }
+      });
+
+      result.sort(function(item1, item2) { 
+        if (item1.name > item2.name) { 
+          return 1;
+        } else {
+          return -1;
+        }
+      });
+
+      this.catalog = result;
+    },
+
+    _processProperties: function(properties) {
+      function isFunction(obj) {
+        return Object.prototype.toString.apply(obj) === "[object Function]";
+      }
+
+      function isObject(obj) {
+        return Object.prototype.toString.apply(obj) === "[object Object]";
+      }
+
+      function isArray(obj) {
+        return Object.prototype.toString.apply(obj) === "[object Array]";
+      }
+
+      var resultAttrs = {};
+
+      var propertyNames = Object.keys(properties);
+
+      propertyNames.forEach(function(propertyName, index) {
+        if (!propertyName.startsWith("_")) {
+          var name = Polymer.CaseMap.camelToDashCase(propertyName);
+          resultAttrs[name] = null;
+
+          var property = properties[propertyName];
+
+          if (isFunction(property)) {
+            resultAttrs[name] = property();
+          } else if (isObject(property)) {
+            resultAttrs[name] = property.value;
+
+            if (property.value === undefined) {
+              resultAttrs[name] = null;
+            } else if (isArray(property.xvaluelist)) {
+              var listItemValues = [];
+              property.xvaluelist.forEach( function(listItem, index) {
+                listItemValues.push(listItem.value);
+              });
+              resultAttrs[name] = listItemValues;
+            } else if (isString(property.available)) {
+              resultAttrs[name] = property.available.split(",");
+            }
+          } else {
+            // report error ?
+          }
+        }
+      });
+
+      return resultAttrs;
+    },
+
+    _computeAttributesArrayString: function(attributes) {
+      var result = "";
+      var separator = ", "
+
+      var i;
+      var keys = Object.keys(attributes);
+      var len = keys.length;
+      var attribute;
+
+      function isArray(obj) {
+        return Object.prototype.toString.apply(obj) === "[object Array]";
+      }
+
+      function isFunction(obj) {
+        return Object.prototype.toString.apply(obj) === "[object Function]";
+      }
+
+      function isString(obj) {
+        return Object.prototype.toString.apply(obj) === "[object String]";
+      }
+
+      function isObject(obj) {
+        return Object.prototype.toString.apply(obj) === "[object Object]";
+      }
+ 
+      function escapeDoubleQuotes(str) {
+        return str.replace(/\\([\s\S])|(")/g,"\\$1$2");
+      }
+
+      function isWindow(obj) {
+        return Object.prototype.toString.apply(obj) === "[object Window]";
+      }
+
+      result += "{"
+
+      keys.forEach(function(key, index) {
+        var attrName = key;
+        var attrValue = attributes[key];
+
+        if (attrName.indexOf("-") > -1) {
+          attrName = "\"" + attrName + "\"";
+        }
+
+        if (isString(attrValue)) {
+          attrValue = escapeDoubleQuotes(attrValue);
+          attrValue = "\"" + attrValue + "\"";
+        } else if (isArray(attrValue)) {
+          attrValue = JSON.stringify(attrValue);
+        } else if (isFunction(attrValue)) {
+          var fnResult = attrValue();
+          if (isObject(fnResult)) {
+            attrValue = JSON.stringify(fnResult);
+          } else {
+            attrValue = null;
+          }
+        } else if (isObject(attrValue)) {
+          attrValue = JSON.stringify(attrValue);
+        } else if (isWindow(attrValue)) {
+          attrValue = null;
+        }
+
+        result += attrName + ": " + attrValue;
+
+        if (index < len - 1) {
+          result += separator;
+        }
+      });
+
+      if (result.endsWith(", ")) {
+        result = result.slice(0, result.length - 2);
+      }
+
+      result += "}";
+
+      return result;
+    },
+
+    _computeComma: function(index) {
+      if (index < this.catalog.length - 1) {
+        return ",";
+      } else {
+        return "";
+      }
+    },
+
+    _mergeObjects(dest, src) {
+
+      Object.keys(src).forEach(function(key, index) {
+        dest[key] = src[key];
+      });
+
+      return dest;
+    }
+  });
+  </script>
+</dom-module>

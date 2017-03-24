@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>at-elements attributes</title>
+  <script src="../webcomponentsjs/webcomponents-lite.js" charset="utf-8"></script>
+  <link rel="import" href="../tangere/tangere.html">
+  <link rel="import" href="at-elements.html">
+  <link rel="import" href="codemirror-hint-tag-attr.html">
+
+  <style media="screen">
+  .title-container {
+    margin: 0 13%;
+    text-align: center;
+  }
+
+  .results-container {
+    margin: 0 8%;
+  }
+  </style>
+</head>
+
+<body>
+  <div class="title-container">
+    <h2>at elements attributes</h2>
+    <p>
+      This is at-elements demo for tag-attributes element.<br/>
+      This element is used to generate a list of all elements and their public attributes.<br/>
+      This list is later copy pasted into <a href="https://github.com/MobilityPortal/MobilityPortal.Builder/blob/master/src/HtmlTags.json"> MobilityPortalBuilder/src/HTMLTags.json</a> file.
+    </p>
+  </div>
+  <div class="results-container">
+    <tag-attributes id="tagAttributes"></tag-attributes>
+  </div>
+</body>
+</html>
