@@ -1,6 +1,6 @@
 <link rel="import" href="../tangere/tangere.html">
 
-<dom-module id="tag-attributes">
+<dom-module id="codemirror-hint-tag-attributes">
   <style>
 
   </style>
@@ -16,7 +16,7 @@
   <script>
   'use strict';
   Polymer({
-    is: 'tag-attributes',
+    is: 'codemirror-hint-tag-attributes',
     properties: {
       catalog: {
         type: Array,
@@ -117,6 +117,8 @@
                 listItemValues.push(listItem.value);
               });
               resultAttrs[name] = listItemValues;
+            } else if (isString(property.xvaluelist)) {
+              resultAttrs[name] = property.xvaluelist.split(",");
             } else if (isString(property.available)) {
               resultAttrs[name] = property.available.split(",");
             }
