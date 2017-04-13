@@ -107,11 +107,9 @@
           if (isFunction(property)) {
             resultAttrs[name] = property();
           } else if (isObject(property)) {
-            resultAttrs[name] = property.value;
+            resultAttrs[name] = null;
 
-            if (property.value === undefined) {
-              resultAttrs[name] = null;
-            } else if (isArray(property.xvaluelist)) {
+            if (isArray(property.xvaluelist)) {
               var listItemValues = [];
               property.xvaluelist.forEach( function(listItem, index) {
                 listItemValues.push(listItem.value);
