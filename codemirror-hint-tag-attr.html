@@ -1,10 +1,11 @@
 <link rel="import" href="../tangere/tangere.html">
+<link rel="import" href="../at-doc-parser/at-doc-parser.html" />
 
 <dom-module id="codemirror-hint-tag-attributes">
   <style>
 
   </style>
-  <template>
+  <template>    
     <div>
       <template is="dom-repeat" items="{{catalog}}">
         <div>
@@ -31,6 +32,24 @@
       var currentGroup;
       var self = this;
       var registrations = Polymer.telemetry.registrations;
+      var elementsToProcess = [];
+      var processedElementCount = 0;
+
+      function importElementText(elementName, valueChangedCallback, context) {
+        var docParser = document.createElement('at-doc-parser');
+        docParser.addEventListener('value-changed', valueChangedCallback.bind(context));
+        var elementUrl = '../' + elementName + '/' + elementName + '.html';
+        docParser.url = elementUrl;
+      }
+
+      function handleValueChanged(event) {
+        processedElementCount += 1;        
+        // console.log('event.detail ' + JSON.stringify(event.detail, null, " "));
+        console.log('Processed ' + processedElementCount + ' of ' + elementsToProcess.length);
+        if (processedElementCount === elementsToProcess.length) {
+          console.log('end of processing');
+        }
+      }
 
       registrations.forEach(function(registration, index) {
         var properties;
@@ -45,28 +64,33 @@
         }
 
         if (registration.is.startsWith("at-")) {
-          forResult = {
-            name: registration.is,
-            attributes: {}
-          };
+          elementsToProcess.push(registration.is);          
+          // forResult = {
+          //   name: registration.is,
+          //   attributes: {}
+          // };
 
-          if (isObject(registration.properties)) {
-            var properties = registration.properties;
-            var attrs = self._processProperties(properties);
-            self._mergeObjects(forResult.attributes, attrs);
-          }
+          // if (isObject(registration.properties)) {
+          //   var properties = registration.properties;
+          //   var attrs = self._processProperties(properties);
+          //   self._mergeObjects(forResult.attributes, attrs);
+          // }
 
-          if (isArray(registration.behaviors)) {
-            registration.behaviors.forEach(function(behavior, index) {
-              if (isObject(behavior) && isObject(behavior.properties)) {
-                var attrs = self._processProperties(behavior.properties);
-                self._mergeObjects(forResult.attributes, attrs);
-              }
-            });
-          }
+          // if (isArray(registration.behaviors)) {
+          //   registration.behaviors.forEach(function(behavior, index) {
+          //     if (isObject(behavior) && isObject(behavior.properties)) {
+          //       var attrs = self._processProperties(behavior.properties);
+          //       self._mergeObjects(forResult.attributes, attrs);
+          //     }
+          //   });
+          // }
 
-          result.push(forResult);
+          // result.push(forResult);
         }
+      });
+
+      elementsToProcess.forEach(function(elementName,  index){
+        importElementText(elementName, handleValueChanged, self);
       });
 
       result.sort(function(item1, item2) { 
