@@ -114,6 +114,7 @@
     "at-theme": "TangereJs/at-theme#master",
     "c3": "TangereJs/c3#master",
     "d3": "TangereJs/d3#master",
+    "nvd3-charts": "TangereJs/nvd3-charts#master",
     "d3-elements": "TangereJs/d3-elements#master",
     "code-mirror": "TangereJs/code-mirror#master",
     "liquid-template": "TangereJs/liquid-template#master",
