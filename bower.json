@@ -85,6 +85,7 @@
     "at-form-array": "TangereJs/at-form-array#master",
     "at-form-behaviors": "TangereJs/at-form-behaviors#master",
     "at-form-checkbox": "TangereJs/at-form-checkbox#master",
+    "at-form-checkbox-list": "TangereJs/at-form-checkbox-list#master",
     "at-form-codemirror": "TangereJs/at-form-codemirror#master",
     "at-form-complex": "TangereJs/at-form-complex#master",
     "at-form-cron": "TangereJs/at-form-cron#master",
