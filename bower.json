@@ -102,6 +102,7 @@
     "at-form-modal": "TangereJs/at-form-modal#master",
     "at-form-number": "TangereJs/at-form-number#master",
     "at-form-password": "TangereJs/at-form-password#master",
+    "at-form-picker": "TangereJs/at-form-picker#master",
     "at-form-radio": "TangereJs/at-form-radio#master",
     "at-form-random": "TangereJs/at-form-random#master",
     "at-form-section": "TangereJs/at-form-section#master",
