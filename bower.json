@@ -3,7 +3,7 @@
   "private": true,
   "dependencies": {
     "web-component-tester": "Polymer/web-component-tester#~6.5.0",
-    "polymer": "Polymer/polymer#master",
+    "polymer": "Polymer/polymer#^2.0.0",
     "tangere": "TangereJs/Tangere#master",
     "core-media-query": "TangereJs/core-media-query#master",
     "at-app-embed": "TangereJs/at-app-embed#master",
