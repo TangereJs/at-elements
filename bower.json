@@ -77,6 +77,7 @@
     "at-core-theme": "TangereJs/at-core-theme#master",
     "at-core-video": "TangereJs/at-core-video#master",
     "at-core-view": "TangereJs/at-core-view#master",
+    "at-core-wysiwyg": "TangereJs/at-core-wysiwyg#master",
     "at-doc-demo": "TangereJs/at-doc-demo#master",
     "at-doc-element": "TangereJs/at-doc-element#master",
     "at-doc-parser": "TangereJs/at-doc-parser#master",
