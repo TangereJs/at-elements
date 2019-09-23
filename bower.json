@@ -65,6 +65,7 @@
     "at-core-mic": "TangereJs/at-core-mic#master",
     "at-core-modal": "TangereJs/at-core-modal#master",
     "at-core-modal-element": "TangereJs/at-core-modal-element#master",
+    "at-core-oembed": "TangereJs/at-core-oembed#master",
     "at-core-pdf": "TangereJs/at-core-pdf#master",
     "at-core-propform": "TangereJs/at-core-propform#master",
     "at-core-resize-sensor": "TangereJs/at-core-resize-sensor#master",
