@@ -116,6 +116,7 @@
     "at-form-textarea": "TangereJs/at-form-textarea#master",
     "at-form-input": "TangereJs/at-form-input#master",
     "at-i18n": "TangereJs/at-i18n#master",
+    "at-intent-card": "TangereJs/at-intent-card#master",
     "at-journey": "TangereJs/at-journey#master",
     "at-link": "TangereJs/at-link#master",
     "at-map-google": "TangereJs/at-map-google#master",
